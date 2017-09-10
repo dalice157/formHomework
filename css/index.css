@@ -1,0 +1,120 @@
+body {
+    background-color: #888;
+}
+
+#wrap {
+    width: 380px;
+    padding: 0 2em 2em 2em;
+    padding-top: 0;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -250px;
+}
+
+.tabs {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 1em 0 5em;
+    padding-bottom: 0;
+    margin-bottom: 1.5em;
+}
+
+.tabs li {
+    margin-bottom: -2px;
+    display: inline-block;
+    margin-left: .8em;
+    margin-right: .8em;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    color: #888;
+}
+
+.tabs li.active {
+    border-bottom: 3px solid #00c98e;
+    color: #000;
+}
+
+#wrap img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-top: -13px;
+}
+
+#wrap dt {
+    width: 24%;
+    color: #888;
+    font-size: 12px;
+    display: inline-block;
+    padding-top: 13px;
+    vertical-align: top;
+}
+
+#wrap dd {
+    width: 60%;
+    display: inline-block;
+}
+
+#wrap button[type=button] {
+    padding: 1em .6em;
+    border-radius: 3px;
+    width: 110px;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+#wrap .defult {
+    color: #fff;
+    text-shadow: 1px 1px #999;
+    background-color: #00c98e;
+    border: 1px solid #fff;
+}
+
+#wrap .del {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #f44336;
+}
+
+#wrap .del i {
+    color: #aaa;
+    font-size: 16px;
+    padding-right: 7px;
+}
+
+#wrap input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 89%;
+    padding: .8em;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    color: #666;
+}
+
+#wrap input:focus {
+    border: 1px solid #00c98e;
+    outline: none;
+}
+
+#wrap p {
+    color: #f44336;
+    margin-top: -2px;
+    padding: 0;
+    margin-bottom: 0;
+    display: none;
+}
+
+#wrap .btn {
+    text-align: right;
+    padding-right: 15px;
+}
+
+#wrap .btn button {
+    border-radius: 4px;
+}
