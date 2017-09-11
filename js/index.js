@@ -14,10 +14,10 @@ validator = (function(){
 	};
 	
 	var errorCheck = {
-		"avatar": null,
-		"firstname": null,
-		"email": null,
-		"password": null
+		avatar: $("input[name=avatar]"),
+		firstname: $("input[name=firstname]"),
+		email: $("input[name=email]"),
+		password: $("input[name=password]")
 	};
 	
 	var errorMessage = function(types){
@@ -31,11 +31,12 @@ validator = (function(){
 		
 	var checkEmail = function(){
 		var emailReg = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		var inputEmail = $("input[name=email]");
+		var inputEmail = errorCheck.email;
+		var emailVal = inputEmail.val();
 		
-		if( !emailReg.test(inputEmail.val()) && inputEmail.val() !== '') {
+		if( !emailReg.test(emailVal) && emailVal !== '') {
 			inputEmail.siblings("#email").text("email格式錯誤").show();
-		}else if(inputEmail.val() === ''){
+		}else if(emailVal === ''){
 			inputEmail.siblings("#email").text("欄位不可為空").show();
 		}else{
 			inputEmail.siblings("#email").text('').hide();
@@ -45,11 +46,12 @@ validator = (function(){
 	var checkPassword = function(){
 		//需有英數字
 		var reg = /^(?=.*\d)(?=.*[a-zA-Z]).{6,10}$/;
-		var inputPassword = $("input[name=password]");
+		var inputPassword = errorCheck.password;
+		var passwordVal = inputPassword.val();
 		
-		if( !reg.test(inputPassword.val())) {
+		if( !reg.test(passwordVal)) {
 			inputPassword.siblings("#password").text("密碼格式錯誤").show();
-		}else if(inputPassword.val() === ''){
+		}else if(passwordVal === ''){
 			inputPassword.siblings("#password").text("欄位不可為空").show();
 		}else{
 			inputPassword.siblings("#password").text('').hide();
