@@ -28,6 +28,15 @@ validator = (function(){
 			}
 		}
 	};
+	
+	function init(data, inputName){
+		if( inputName.val().trim() === ''){
+			inputName.siblings("#" + data ).text("欄位不可為空").show();
+		}else{
+			inputName.siblings("#" + data ).text('').hide();
+			checkValue();
+		}
+	}
 		
 	var checkEmail = function(){
 		var emailReg = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -57,15 +66,6 @@ validator = (function(){
 			inputPassword.siblings("#password").text('').hide();
 		}
 	};
-	
-	function init(data, inputName){
-		if( inputName.val().trim() === ''){
-			inputName.siblings("#" + data ).text("欄位不可為空").show();
-		}else{
-			inputName.siblings("#" + data ).text('').hide();
-			checkValue();
-		}
-	}
 	
 	function checkValue(){
 		checkEmail();
