@@ -10,7 +10,7 @@ var validator = validator || {};
 validator = (function(){
 	
 	var submit = function(type){
-			errorMessage(type);
+		errorMessage(type);
 	};
 	
 	var errorCheck = {
@@ -32,7 +32,7 @@ validator = (function(){
 	var checkEmail = function(){
 		var emailReg = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		var inputEmail = errorCheck.email;
-		var emailVal = inputEmail.val();
+		var emailVal = inputEmail.val().trim();
 		
 		if( !emailReg.test(emailVal) && emailVal !== '') {
 			inputEmail.siblings("#email").text("email格式錯誤").show();
@@ -47,7 +47,7 @@ validator = (function(){
 		//需有英數字
 		var reg = /^(?=.*\d)(?=.*[a-zA-Z]).{6,10}$/;
 		var inputPassword = errorCheck.password;
-		var passwordVal = inputPassword.val();
+		var passwordVal = inputPassword.val().trim();
 		
 		if( !reg.test(passwordVal)) {
 			inputPassword.siblings("#password").text("密碼格式錯誤").show();
@@ -59,12 +59,12 @@ validator = (function(){
 	};
 	
 	function init(data, inputName){
-			if( inputName.val() === ''){
-				inputName.siblings("#" + data ).text("欄位不可為空").show();
-			}else{
-				inputName.siblings("#" + data ).text('').hide();
-				checkValue();
-			}
+		if( inputName.val().trim() === ''){
+			inputName.siblings("#" + data ).text("欄位不可為空").show();
+		}else{
+			inputName.siblings("#" + data ).text('').hide();
+			checkValue();
+		}
 	}
 	
 	function checkValue(){
